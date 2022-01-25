@@ -1,5 +1,3 @@
-import javax.swing.plaf.multi.MultiSeparatorUI;
-import java.io.*;
 import java.util.Scanner;
 
 public class NetWork{
@@ -38,7 +36,7 @@ public class NetWork{
         Scanner input = new Scanner(System.in);
         System.out.println("Please enter the user name:");
         String profileName = input.nextLine();
-        record.addProfile(profileName, new profile(profileName));
+        record.addProfile(profileName, new User(profileName));
 
         System.out.println("Hi " + profileName + " you have successfully signed up. Please log in." );
     }
@@ -51,7 +49,7 @@ public class NetWork{
         System.out.println("Please enter the profile name:");
         String profileName = input.nextLine();
 
-        profile thisProfile = record.searchProfile(profileName);
+        User thisProfile = record.searchProfile(profileName);
 
         displayProfile(thisProfile);
 
@@ -89,14 +87,14 @@ public class NetWork{
             } else if (UserInput == 5) {
                 System.out.println("Please enter the profile name that you want to add as friend:");
                 input.nextLine();
-                profile friend = record.searchProfile(input.nextLine());
+                User friend = record.searchProfile(input.nextLine());
                 thisProfile.addFriend(friend);
 
             } else if (UserInput == 6) {
                 System.out.println("Please enter the profile name that you want to delete from your " +
                         " friend List:");
                 input.nextLine();
-                profile friend = record.searchProfile(input.nextLine());
+                User friend = record.searchProfile(input.nextLine());
                 thisProfile.deleteFriend(friend);
 
             }else if (UserInput == 7){
@@ -117,7 +115,7 @@ public class NetWork{
     /*
     display the profile of a person.
      */
-    public void displayProfile(profile person){
+    public void displayProfile(User person){
         System.out.println("---------------------------------");
         System.out.println("Name: " + person.getName());
         System.out.println("Status: " + person.getStatus());
@@ -134,15 +132,15 @@ public class NetWork{
     public profileDataBase initiation(){
         profileDataBase Record = new profileDataBase();
 
-        Record.addProfile("Jack", new profile("Jack", "male", 18));
-        Record.addProfile("Tim", new profile("Tim", "male", 52));
-        Record.addProfile("Sander", new profile("Sander", "female", 33));
-        Record.addProfile("Thompson", new profile("Thompson", "male", 22));
-        Record.addProfile("Cindy", new profile("Cindy", "female", 15));
-        Record.addProfile("David", new profile("David", "male", 18));
-        Record.addProfile("Jennifer", new profile("Jennifer", "female", 27));
-        Record.addProfile("Paul", new profile("Pual", "male", 17));
-        Record.addProfile("Jason", new profile("Jason", "male", 15));
+        Record.addProfile("Jack", new User("Jack", "male", 18));
+        Record.addProfile("Tim", new User("Tim", "male", 52));
+        Record.addProfile("Sander", new User("Sander", "female", 33));
+        Record.addProfile("Thompson", new User("Thompson", "male", 22));
+        Record.addProfile("Cindy", new User("Cindy", "female", 15));
+        Record.addProfile("David", new User("David", "male", 18));
+        Record.addProfile("Jennifer", new User("Jennifer", "female", 27));
+        Record.addProfile("Paul", new User("Pual", "male", 17));
+        Record.addProfile("Jason", new User("Jason", "male", 15));
 
         Record.addFriend("Jack", "Tim");
         Record.addFriend("Jack", "Cindy");
@@ -157,15 +155,15 @@ public class NetWork{
         Record.addFriend("Jason", "Jack");
         Record.addFriend("Jason", "Sander");
 
-        profile Jack = Record.searchProfile("Jack");
-        profile Tim = Record.searchProfile("Tim");
-        profile Sander = Record.searchProfile("Sander");
-        profile Thompson = Record.searchProfile("Thompson");
-        profile Cindy = Record.searchProfile("Cindy");
-        profile David = Record.searchProfile("David");
-        profile Jennifer = Record.searchProfile("Jennifer");
-        profile Paul = Record.searchProfile("Paul");
-        profile Jason = Record.searchProfile("Jason");
+        User Jack = Record.searchProfile("Jack");
+        User Tim = Record.searchProfile("Tim");
+        User Sander = Record.searchProfile("Sander");
+        User Thompson = Record.searchProfile("Thompson");
+        User Cindy = Record.searchProfile("Cindy");
+        User David = Record.searchProfile("David");
+        User Jennifer = Record.searchProfile("Jennifer");
+        User Paul = Record.searchProfile("Paul");
+        User Jason = Record.searchProfile("Jason");
 
         System.out.println("Welcome to FeetBook!");
         System.out.println("You might know these people.\n");

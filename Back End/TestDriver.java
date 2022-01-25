@@ -42,7 +42,7 @@ public class TestDriver {
         Record.displayFriendListOfFriends("Paul");
     }
 
-    public static void displayProfile(profile person){
+    public static void displayProfile(User person){
         System.out.println("------------------------");
         System.out.println("Name: " + person.getName());
         System.out.println("Status: " + person.getStatus());
@@ -52,15 +52,15 @@ public class TestDriver {
     }
 
     public static void setProfile(profileDataBase Record){
-        Record.addProfile("Jack", new profile("Jack", "male", 18));
-        Record.addProfile("Tim", new profile("Tim", "male", 52));
-        Record.addProfile("Sander", new profile("Sander", "female", 33));
-        Record.addProfile("Thompson", new profile("Thompson", "male", 22));
-        Record.addProfile("Cindy", new profile("Cindy", "female", 15));
-        Record.addProfile("David", new profile("David", "male", 18));
-        Record.addProfile("Jennifer", new profile("Jennifer", "female", 27));
-        Record.addProfile("Paul", new profile("Pual", "male", 17));
-        Record.addProfile("Jason", new profile("Jason", "male", 15));
+        Record.addProfile("Jack", new User("Jack", "male", 18));
+        Record.addProfile("Tim", new User("Tim", "male", 52));
+        Record.addProfile("Sander", new User("Sander", "female", 33));
+        Record.addProfile("Thompson", new User("Thompson", "male", 22));
+        Record.addProfile("Cindy", new User("Cindy", "female", 15));
+        Record.addProfile("David", new User("David", "male", 18));
+        Record.addProfile("Jennifer", new User("Jennifer", "female", 27));
+        Record.addProfile("Paul", new User("Pual", "male", 17));
+        Record.addProfile("Jason", new User("Jason", "male", 15));
     }
 
     public static void setFriendRelationship(profileDataBase Record){
